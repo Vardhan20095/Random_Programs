@@ -1,0 +1,36 @@
+#include <stdio.h>
+#define _CRT_SECURE_NO_DEPRECATE
+
+void compareFunction(int *a, int* b); 
+
+int main(void)
+{
+\\Integers a and b, with their respective pointers. 
+	int a,b; 
+	int *aRef = &a; 
+	int *bRef = &b; 
+	
+	printf("Please enter two integers below \n"); 
+	while(scanf("%d", &a) != 1);
+	while(scanf("%d", &b) != 1); 
+	
+	compareFunction(aRef, bRef);
+	printf("Now, press e to exit \n");  
+	while(getchar() != 'e'); 
+	return 0; 
+}
+
+\\The compareFunction uses dereferencing to obtain the value and compare them, and prints out the greater one using the if condition.
+
+void compareFunction(int *a, int* b)
+{
+	if( *a > *b)
+	{
+		printf("a = %d is greater than b = %d \n", *a, *b); 
+	}
+	else
+	{
+		printf("b = %d is greater than a = %d \n", *b , *a); 
+	}
+	
+}
