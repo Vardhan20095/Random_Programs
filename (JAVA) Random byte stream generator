@@ -1,0 +1,35 @@
+import java.util.Random; 
+import java.util.ArrayList;  
+
+/**
+ * Generates random bytes. 
+ *
+ * @author Kirti Vardhan
+ * @version 2.0
+ */
+public class RandomGen
+{
+   private Random generator; 
+   
+   public RandomGen()
+   {
+       generator = new Random(); 
+   }
+   
+
+   /**
+    * Generates n bytes, by printing them out.  
+    * 
+    * @param  n  The number of bytes needed. 
+    * @return    void
+    */
+   public void generateNbytes(int n)
+   {
+        for(int a = 0; a < n ; a ++)
+        {
+            System.out.println( generator.nextInt(2) + "" + generator.nextInt(2) + "" + generator.nextInt(2) + "" + generator.nextInt(2) + "" + generator.nextInt(2) + "" + generator.nextInt(2) + "" + generator.nextInt(2) + "" + generator.nextInt(2) + "" ); 
+        }
+    
+    }
+   
+}
