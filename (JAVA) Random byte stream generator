@@ -10,10 +10,22 @@ import java.util.ArrayList;
 public class RandomGen
 {
    private Random generator; 
+   private ArrayList<String> hexChars; 
    
    public RandomGen()
    {
        generator = new Random(); 
+       hexChars = new ArrayList<String>(); 
+       hexChars.add("A");
+       hexChars.add("B");
+       hexChars.add("C");
+       hexChars.add("D");
+       hexChars.add("E");
+       hexChars.add("F");
+       for(Integer a = 0; a <= 9; a++)
+       {
+           hexChars.add(a.toString()); 
+       }
    }
    
 
@@ -32,4 +44,17 @@ public class RandomGen
     
     }
    
+    /**
+     * Generates random bytes in hexadecimal format
+     *
+     * @param  n The number of hexadecimals needed.
+     * @return   void
+     */
+    public void generateNBytesHex(int n)
+    {
+        for(int a = 0; a < n ; a ++)
+        {
+            System.out.println("0x" + hexChars.get(generator.nextInt(hexChars.size() - 1) ) + "" + hexChars.get(generator.nextInt(hexChars.size() - 1) ));
+        }
+    }
 }
